@@ -1,0 +1,31 @@
+name: build-check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install markdown pillow cairosvg
+      - name: Build site
+        run: python3 build/build.py
+      - name: site/ must match the sources (images excluded; they render slightly differently per tool)
+        run: git diff --exit-code -- site ':!site/images/*.jpg'
+      - name: Every article has an illustration and a Norwegian summary
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, sys
+          bad = []
+          for p in pathlib.Path("content").glob("*.md"):
+              m = json.loads(p.read_text().split("\n---\n", 1)[0])
+              for k in ("slug","title","seo_title","description","dek","date","image","image_alt","no_title","no_summary","no_dek"):
+                  if not m.get(k): bad.append(f"{p.name}: missing {k}")
+              if m.get("slug") != p.stem: bad.append(f"{p.name}: slug != filename")
+              if len(m.get("seo_title","")) > 65: bad.append(f"{p.name}: seo_title too long")
+          print("\n".join(bad) or "ok"); sys.exit(1 if bad else 0)
+          PY

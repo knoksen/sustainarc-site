@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SustainArc works on sustainable architecture and circular construction: buildings designed for long life, adaptation and reuse, with material and climate choices made measurable.">
+<link rel="canonical" href="https://sustainarc.jarlhalla.com/">
+<meta property="og:title" content="SustainArc">
+<meta property="og:description" content="Sustainable architecture and circular construction. Part of the Jarlhalla ecosystem.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sustainarc.jarlhalla.com/">
+<meta name="theme-color" content="#14332E">
+<title>SustainArc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+/* Jarlhalla house style (deep-green bar, paper ground, serif display). The one subject-specific
+   element is the life-cycle ring in the hero: the stages a building's materials pass through. */
+:root{
+  --paper:#FAF8F3; --band:#E8ECDF; --card:#FFFFFF; --warm:#F2E3D8;
+  --ink:#14332E; --body:#2B403B; --muted:#5C6F69; --line:#D5DACC;
+  --bar:#14332E; --bar-ink:#F3F5EE; --bar-muted:#A9BDB4;
+  --accent:#A6481F; --btn:#14332E; --btn-ink:#FFFFFF; --leaf:#3F7A55; --leaf-soft:#B5CBA0;
+  --display:"Newsreader","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0E1D1A; --band:#142824; --card:#172E29; --warm:#33261D;
+  --ink:#EEF2E8; --body:#CFD9D0; --muted:#94A69E; --line:#294039;
+  --bar:#0A1614; --bar-ink:#EEF2E8; --bar-muted:#8FA39A;
+  --accent:#E59A6E; --btn:#DCE8CF; --btn-ink:#0E1D1A; --leaf:#7FBF86; --leaf-soft:#28513D;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --paper:#0E1D1A; --band:#142824; --card:#172E29; --warm:#33261D;
+  --ink:#EEF2E8; --body:#CFD9D0; --muted:#94A69E; --line:#294039;
+  --bar:#0A1614; --bar-ink:#EEF2E8; --bar-muted:#8FA39A;
+  --accent:#E59A6E; --btn:#DCE8CF; --btn-ink:#0E1D1A; --leaf:#7FBF86; --leaf-soft:#28513D;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1232px;margin-inline:auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3{font-family:var(--display);color:var(--ink);font-weight:600;letter-spacing:-.015em;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.02}
+h2{font-size:clamp(1.6rem,2.6vw,2rem);line-height:1.15}
+h3{font-size:1.3rem;line-height:1.2}
+p{margin:0;max-width:65ch}
+.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.arrow::after{content:"\2192";margin-left:.6em;display:inline-block;transition:transform .15s}
+a:hover .arrow::after{transform:translateX(3px)}
+@media (prefers-reduced-motion:reduce){.arrow::after{transition:none}}
+.bar{background:var(--bar);color:var(--bar-ink)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;padding-block:16px}
+.brand{font-family:var(--display);font-size:1.7rem;letter-spacing:.02em;text-decoration:none;font-weight:500;margin-right:auto;display:flex;align-items:baseline;gap:12px}
+.brand small{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bar-muted)}
+.nav{display:flex;flex-wrap:wrap;gap:6px 24px;font-size:.9rem}
+.nav a{text-decoration:none}.nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.lang{display:flex;gap:8px;align-items:center;font-size:.8rem;color:var(--bar-muted)}
+.lang button{background:none;border:0;padding:4px 2px;font:inherit;color:var(--bar-muted);cursor:pointer;letter-spacing:.06em}
+.lang button[aria-pressed="true"]{color:var(--bar-ink);text-decoration:underline;text-underline-offset:5px}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:clamp(32px,5vw,64px)}
+.hero-copy{display:flex;flex-direction:column;gap:20px;min-width:0}
+.lede{font-size:1.15rem}
+.actions{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;margin-top:8px}
+.btn{background:var(--btn);color:var(--btn-ink);text-decoration:none;padding:13px 28px;border-radius:4px;font-size:.95rem;font-weight:500}
+.link{text-underline-offset:5px;font-size:.95rem;color:var(--ink)}
+.ring{margin:0;min-width:0;justify-self:center;width:100%;max-width:440px}
+.ring svg{width:100%;height:auto;display:block}
+.ring figcaption{margin-top:8px;font-size:.78rem;color:var(--muted);text-align:center}
+section{padding-block:clamp(36px,5vw,56px)}
+.band{background:var(--band)}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px clamp(20px,3vw,40px);list-style:none;margin:0;padding:0}
+.grid4 li{display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:2px solid var(--leaf);min-width:0}
+.grid4 p{font-size:.94rem}
+.offers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(20px,4vw,56px)}
+.offers li{padding:16px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px;min-width:0}
+.offers b{font-weight:500;color:var(--ink)}
+.offers span{font-size:.93rem}
+.note{margin-top:20px;font-size:.88rem;color:var(--muted)}
+.cta{background:var(--warm);border-radius:6px;padding:clamp(20px,3vw,32px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.cta div{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 320px}
+.cta .acts{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;flex:0 1 auto}
+footer{border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;padding-block:28px}
+footer .fb{font-family:var(--display);font-size:1.3rem;color:var(--ink);letter-spacing:.02em}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+@media (max-width:960px){ .grid4{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:860px){ .hero{grid-template-columns:minmax(0,1fr)} .offers{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:520px){ .grid4{grid-template-columns:minmax(0,1fr)} body{font-size:16px} }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">SUSTAINARC <small data-i18n="by">a Jarlhalla initiative</small></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#focus" data-i18n="n1">Focus</a>
+      <a href="#practice" data-i18n="n2">In practice</a>
+      <a href="#contact" data-i18n="n3">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" aria-pressed="true">EN</button><span>/</span><button type="button" id="lang-no" aria-pressed="false">NO</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="eyebrow">Sustainable architecture · Circular construction</span>
+      <h1 data-i18n="h1">Buildings that stay useful, and materials that come back.</h1>
+      <p class="lede" data-i18n="lede">SustainArc works on sustainable architecture and circular construction: designing for long life, adaptation and reuse, and making material and climate choices measurable from the first sketch.</p>
+      <div class="actions">
+        <a class="btn" href="#contact"><span class="arrow" data-i18n="cta1">Discuss a project</span></a>
+        <a class="link" href="#practice"><span class="arrow" data-i18n="cta2">What we offer</span></a>
+      </div>
+    </div>
+    <figure class="ring" aria-labelledby="ring-cap">
+      <svg viewBox="-70 0 540 400" role="img" aria-labelledby="ring-title">
+        <title id="ring-title">Life-cycle stages of building materials, arranged as a loop</title>
+        <circle cx="200" cy="200" r="120" fill="none" stroke="var(--leaf)" stroke-width="3"/>
+        <path d="M168.3 77.6 L179.2 81.8 L170.4 89.5" fill="none" stroke="var(--leaf)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="stages" font-family="DM Sans, system-ui, sans-serif" font-size="13" fill="var(--ink)" text-anchor="middle"></g>
+        <text x="200" y="192" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="24" fill="var(--ink)" data-i18n="ring1">Design for</text>
+        <text x="200" y="222" text-anchor="middle" font-family="Newsreader, Georgia, serif" font-size="24" fill="var(--ink)" data-i18n="ring2">the next use</text>
+      </svg>
+      <figcaption id="ring-cap" data-i18n="ringcap">Every stage of a material's life counts, not only construction.</figcaption>
+    </figure>
+  </div>
+
+  <section class="band" id="focus">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="f_eb">Focus</span>
+        <h2 data-i18n="f_h">Four areas we work in</h2>
+      </div>
+      <ul class="grid4">
+        <li><h3 data-i18n="f1h">Circularity</h3><p data-i18n="f1p">Design for disassembly and reuse, with the material documentation that makes reuse possible later.</p></li>
+        <li><h3 data-i18n="f2h">Climate and life cycle</h3><p data-i18n="f2p">Emissions assessed over the whole life of the building, and decided early, when choices are still cheap to change.</p></li>
+        <li><h3 data-i18n="f3h">Digital workflow</h3><p data-i18n="f3p">BIM models that carry quantities and material data, as a basis for life-cycle analysis and digital twins.</p></li>
+        <li><h3 data-i18n="f4h">Local grounding</h3><p data-i18n="f4p">Building tradition, climate and locally available materials taken seriously as design inputs.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="practice">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="p_eb">In practice</span>
+        <h2 data-i18n="p_h">Delivered through Taksdal Bygg Teknisk</h2>
+        <p data-i18n="p_p">The practical work is carried out by Taksdal BT, the building-technical consultancy in the Jarlhalla ecosystem.</p>
+      </div>
+      <ul class="offers">
+        <li><b data-i18n="o1h">BIM to an LCA-ready model</b><span data-i18n="o1p">Models prepared for quantities, material data and climate reporting.</span></li>
+        <li><b data-i18n="o2h">Reuse and documentation</b><span data-i18n="o2p">Reuse potential, documentation needs and technical risks assessed.</span></li>
+        <li><b data-i18n="o3h">Renovation passport (light)</b><span data-i18n="o3p">A practical plan for upgrading or converting an existing building.</span></li>
+        <li><b data-i18n="o4h">TEK17 plus climate and energy</b><span data-i18n="o4p">A forward-looking project check with a risk matrix.</span></li>
+      </ul>
+      <p class="note"><a class="link" href="https://jarlhalla.com/taksdal-bt-byggesoknad-tegninger-og-byggteknisk-radgivning/"><span class="arrow" data-i18n="p_link">All services and prices at Taksdal BT</span></a></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2 data-i18n="c_h">Have a project in mind?</h2>
+          <p data-i18n="c_p">Send a short description: what you want to build or change, where, and when. You get a reply on how we can help.</p>
+        </div>
+        <div class="acts">
+          <a class="btn" href="mailto:taksdalbt@gmail.com?subject=SustainArc%20-%20project"><span class="arrow" data-i18n="c_btn">Email us</span></a>
+          <a class="link" href="tel:+4793960702">+47 939 60 702</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><div class="fb">SUSTAINARC</div><span data-i18n="f_tag">Sustainable architecture and circular construction. Part of the Jarlhalla ecosystem.</span></div>
+    <nav aria-label="Footer">
+      <a href="https://jarlhalla.com">jarlhalla.com</a>
+      <a href="https://mykoknoks.jarlhalla.com">MykoKnoks</a>
+      <span>© 2026 Jarlhalla</span>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var stages = {
+    en:["Extraction","Manufacture","Transport","Construction","Operation","Adaptation","Disassembly","Reuse","Recycling"],
+    no:["Uttak","Produksjon","Transport","Bygging","Drift","Tilpasning","Demontering","Ombruk","Gjenvinning"]
+  };
+  var NO = {
+    by:"et Jarlhalla-initiativ", n1:"Fokus", n2:"I praksis", n3:"Kontakt",
+    eyebrow:"Bærekraftig arkitektur · Sirkulært byggeri",
+    h1:"Bygg som forblir nyttige, og materialer som kommer tilbake.",
+    lede:"SustainArc arbeider med bærekraftig arkitektur og sirkulært byggeri: bygg som er laget for lang levetid, tilpasning og ombruk, der material- og klimavalg blir målbare fra første skisse.",
+    cta1:"Snakk om et prosjekt", cta2:"Hva vi tilbyr",
+    ring1:"Prosjekter for", ring2:"neste bruk",
+    ringcap:"Hver fase i materialets liv teller, ikke bare byggingen.",
+    f_eb:"Fokus", f_h:"Fire områder vi arbeider med",
+    f1h:"Sirkularitet", f1p:"Prosjektering for demontering og ombruk, med materialdokumentasjonen som gjør ombruk mulig senere.",
+    f2h:"Klima og livsløp", f2p:"Utslipp vurdert over hele byggets levetid, og avgjort tidlig, mens valgene ennå er billige å endre.",
+    f3h:"Digital arbeidsflyt", f3p:"BIM-modeller med mengder og materialdata, som grunnlag for livsløpsanalyse og digitale tvillinger.",
+    f4h:"Lokal forankring", f4p:"Byggeskikk, klima og lokalt tilgjengelige materialer tatt på alvor som premisser i prosjekteringen.",
+    p_eb:"I praksis", p_h:"Levert gjennom Taksdal Bygg Teknisk",
+    p_p:"Det praktiske arbeidet utføres av Taksdal BT, det byggtekniske rådgivningsfirmaet i Jarlhalla-økosystemet.",
+    o1h:"BIM til LCA-klar modell", o1p:"Modeller klargjort for mengder, materialdata og klimarapportering.",
+    o2h:"Ombruk og dokumentasjon", o2p:"Vurdering av ombrukspotensial, dokumentasjonsbehov og tekniske risikoer.",
+    o3h:"Renoveringspass light", o3p:"En praktisk plan for oppgradering eller ombygging av eksisterende bygg.",
+    o4h:"TEK17 + klima/energi", o4p:"En fremtidsrettet prosjektsjekk med risikomatrise.",
+    p_link:"Alle tjenester og priser hos Taksdal BT",
+    c_h:"Har du et prosjekt?", c_p:"Send en kort beskrivelse: hva du vil bygge eller endre, hvor og når. Du får svar på hvordan vi kan hjelpe.",
+    c_btn:"Send e-post", f_tag:"Bærekraftig arkitektur og sirkulært byggeri. En del av Jarlhalla-økosystemet."
+  };
+  var EN = {};
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ EN[el.getAttribute("data-i18n")] = el.textContent; });
+
+  function drawStages(lang){
+    var g = document.getElementById("stages"), list = stages[lang], n = list.length;
+    while (g.firstChild) g.removeChild(g.firstChild);
+    for (var i = 0; i < n; i++){
+      var a = -Math.PI/2 + i * 2*Math.PI/n, c = Math.cos(a), sn = Math.sin(a), cx = 200 + 120*c, cy = 200 + 120*sn;
+      var dot = document.createElementNS("http://www.w3.org/2000/svg","circle");
+      dot.setAttribute("cx",cx); dot.setAttribute("cy",cy); dot.setAttribute("r",6);
+      dot.setAttribute("fill", i >= 6 ? "var(--accent)" : "var(--leaf)");
+      g.appendChild(dot);
+      var lx = 200 + 134*c, ly = 200 + 134*sn + 4;
+      if (sn < -0.9) ly -= 6; if (sn > 0.9) ly += 10;
+      var t = document.createElementNS("http://www.w3.org/2000/svg","text");
+      t.setAttribute("x",lx); t.setAttribute("y",ly);
+      if (c > .3) t.setAttribute("text-anchor","start"); else if (c < -.3) t.setAttribute("text-anchor","end");
+      t.textContent = list[i];
+      g.appendChild(t);
+    }
+  }
+  function setLang(lang){
+    var dict = lang === "no" ? NO : EN;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n"); if (dict[k]) el.textContent = dict[k];
+    });
+    document.documentElement.lang = lang === "no" ? "no" : "en";
+    document.getElementById("lang-en").setAttribute("aria-pressed", lang !== "no");
+    document.getElementById("lang-no").setAttribute("aria-pressed", lang === "no");
+    drawStages(lang);
+    try { localStorage.setItem("sa-lang", lang); } catch(e){}
+  }
+  document.getElementById("lang-en").addEventListener("click", function(){ setLang("en"); });
+  document.getElementById("lang-no").addEventListener("click", function(){ setLang("no"); });
+  var saved = null; try { saved = localStorage.getItem("sa-lang"); } catch(e){}
+  setLang(saved || "en");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LCA-Ready BIM: Seven Checks Before a TEK17 Climate Account</title>
+<meta name="description" content="A BIM model is not a climate account. Seven practical checks on scope, layers, thin materials, reinforcement, rounding, simplified objects and data sources before TEK17 §17-1 reporting.">
+<link rel="canonical" href="https://sustainarc.jarlhalla.com/articles/lca-ready-bim-tek17-climate-account-checks/">
+<meta property="og:site_name" content="SustainArc">
+<meta property="og:title" content="LCA-Ready BIM: Seven Checks Before a TEK17 Climate Account">
+<meta property="og:description" content="A BIM model is not a climate account. Seven practical checks on scope, layers, thin materials, reinforcement, rounding, simplified objects and data sources before TEK17 §17-1 reporting.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sustainarc.jarlhalla.com/articles/lca-ready-bim-tek17-climate-account-checks/">
+<meta property="og:image" content="https://sustainarc.jarlhalla.com/images/lca-ready-bim-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14332E">
+<link rel="alternate" type="application/rss+xml" title="SustainArc articles" href="https://sustainarc.jarlhalla.com/articles/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Seven Checks Before Your BIM Model Becomes a TEK17 Climate Account", "description": "A BIM model is not a climate account. Seven practical checks on scope, layers, thin materials, reinforcement, rounding, simplified objects and data sources before TEK17 §17-1 reporting.", "datePublished": "2026-11-15", "dateModified": "2026-11-15", "inLanguage": "en", "image": "https://sustainarc.jarlhalla.com/images/lca-ready-bim-og.jpg", "mainEntityOfPage": "https://sustainarc.jarlhalla.com/articles/lca-ready-bim-tek17-climate-account-checks/", "keywords": "BIM, LCA, TEK17, Climate account, Revit", "author": {"@type": "Organization", "name": "SustainArc", "url": "https://sustainarc.jarlhalla.com/"}, "publisher": {"@type": "Organization", "name": "Jarlhalla", "url": "https://jarlhalla.com"}}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="/">SUSTAINARC <small data-i18n="by">a Jarlhalla initiative</small></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="/#focus" data-i18n="n1">Focus</a>
+      <a href="/#practice" data-i18n="n2">In practice</a>
+      <a href="/articles/" data-i18n="n4" aria-current="page">Articles</a>
+      <a href="/#contact" data-i18n="n3">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" aria-pressed="true">EN</button><span>/</span><button type="button" id="lang-no" aria-pressed="false">NO</button>
+    </div>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <p class="crumbs"><a href="/" data-i18n="home">Home</a> / <a href="/articles/" data-i18n="arts">Articles</a></p>
+    <div class="art-head">
+      <ul class="tags"><li>BIM</li><li>LCA</li><li>TEK17</li><li>Climate account</li><li>Revit</li></ul>
+      <h1>Seven Checks Before Your BIM Model Becomes a TEK17 Climate Account</h1>
+      <p class="dek">Most Norwegian climate accounts start as a quantity export from a BIM model. That export is where many of the errors are made, and they matter more once limit values arrive.</p>
+      <p class="meta"><span>SustainArc</span><span><time datetime="2026-11-15">15 November 2026</time></span><span>9 min read</span></p>
+    </div>
+    <figure class="hero-img">
+      <img src="/images/lca-ready-bim.svg" width="1200" height="675" alt="Illustration of a layered wall build-up linked by lines to quantities in a climate account table">
+    </figure>
+    <div class="layout">
+      <article class="prose">
+        <section class="no-box" lang="no" aria-labelledby="no-h">
+          <h2 id="no-h">Norsk sammendrag</h2>
+          <p class="no-t">Sju kontroller før BIM-modellen blir et klimagassregnskap etter TEK17</p>
+          <p>TEK17 § 17-1 krever klimagassregnskap for boligblokker og yrkesbygg etter NS 3720, og de fleste regnskap starter som et mengdeuttrekk fra BIM-modellen. En internasjonal sammenligning fra 2025 fant manglende materialer i 55 tilfeller og avvik opp mot en faktor 10 i slike uttrekk. Artikkelen går gjennom sju kontroller: omfang etter NS 3451, sjiktvise materialer, tynne sjikt, armering, enheter og avrunding, forenklede objekter og valg av EPD-data. Direktoratet for byggkvalitet har foreslått grenseverdier (f.eks. 354 kg CO2-ekv./m² BTA for boligblokk); forslaget var på høring til 5. mai 2026, og vi har ikke funnet vedtak per november 2026.</p>
+        </section>
+        <p>A climate account under TEK17 is a calculation about materials. In practice, most of those materials are first counted by a BIM model. The account can only be as good as the quantity export that feeds it, and that export is usually the least documented step in the whole chain.</p>
+<p>This article sets out seven checks we apply before a model's quantities are allowed into a climate account. None of them needs special software. All of them can be written into an information requirement and tested.</p>
+<h2 id="what-the-regulation-asks-for-today">What the regulation asks for today</h2>
+<p>TEK17 § 17-1 requires a climate gas account for new apartment blocks and non-residential buildings, and for major rebuilds of them. The account follows the method in NS 3720:2018 and must cover at least modules A1–A4, B2 and B4, plus waste from the construction site. The building parts are listed by NS 3451 code: piled and direct foundations (215 and 216), structural systems (22), external walls (23), internal walls (24), floors (25) and roofs (26) <sup><a href="#src-1" aria-label="Source 1">[1]</a></sup>.</p>
+<p>The guidance adds three points that matter for modelling. The account is documented for the finished building, not just the design. Biogenic carbon, for example in timber, is not included. And where no product-specific EPD exists, generic values from a national database may be used with a 25 % surcharge, unless the data source already includes one. The calculation period is 50 years <sup><a href="#src-1" aria-label="Source 1">[1]</a></sup>. The requirement came into force on 1 July 2022, with a one-year transition <sup><a href="#src-7" aria-label="Source 7">[7]</a></sup>.</p>
+<h2 id="why-the-quantity-export-matters-more-from-now-on">Why the quantity export matters more from now on</h2>
+<p>In February 2026 the Norwegian Building Authority (DiBK) proposed two changes to chapter 17. The first widens § 17-1: all of module A5, stairs and balconies (28) and prefabricated rooms (61) for all covered projects, building services for projects of at least 5,000 m² BTA, and small-house developments of at least 1,000 m² BTA. The second introduces a new § 17-2 with limit values per building category, for example 354 kg CO₂e/m² BTA for apartment blocks, 396 for offices and 294 for schools and kindergartens, measured over 50 years <sup><a href="#src-2" aria-label="Source 2">[2]</a></sup>.</p>
+<p>The hearing closed on 5 May 2026. At the time of writing we have not found an adopted amendment, so check dibk.no before relying on the figures. The direction is still clear. Once a number is compared with a limit, a quantity error is no longer a reporting detail. It is a compliance risk.</p>
+<h2 id="what-goes-wrong-between-model-and-spreadsheet">What goes wrong between model and spreadsheet</h2>
+<p>A 2025 study compared how teams from eight countries exported a bill of quantities from the same BIM model of an office building for life-cycle assessment. Five teams delivered detailed quantities that could be compared, and most workflows still relied on manual transfer <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>.</p>
+<p>The errors were mundane, and that is the point. The authors report 55 cases of missing materials, most of them because composite elements were not split into their materials, some because thin layers such as foils had zero thickness and therefore zero volume. They found reinforcement quantities off by a factor of 1/16 from a generic factor, stone wool understated by 78 % through a wrong decomposition factor, a factor-five error from an area-to-volume conversion and a factor-ten error from one transposed digit. Rounding of volumes to two decimals in Revit schedules also showed up <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>.</p>
+<p>An earlier review of 60 BIM–LCA case studies found that spreadsheets were still the most common link between model and assessment <sup><a href="#src-4" aria-label="Source 4">[4]</a></sup>. The manual step has not gone away.</p>
+<h2 id="the-seven-checks">The seven checks</h2>
+<h3 id="1-map-the-model-to-the-required-scope">1. Map the model to the required scope</h3>
+<p>Every element that belongs in the account needs an NS 3451 code, and every required code needs elements. Run both directions. Elements without a code are a gap list. Required codes with no elements, for example 216 in a model where foundations sit in a separate structural file, are a scope error. If the 2026 proposal is adopted, 28 and 61 join the list, and in larger projects so do parts of the building services <sup><a href="#src-2" aria-label="Source 2">[2]</a></sup>.</p>
+<h3 id="2-count-layers-not-elements">2. Count layers, not elements</h3>
+<p>A compound wall, floor or roof is one element with several materials. The climate account needs the materials. Export per layer and material, and check that the sum of the layer volumes equals the element volume. That single plausibility check catches most decomposition errors <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>.</p>
+<h3 id="3-give-thin-layers-an-area">3. Give thin layers an area</h3>
+<p>Wind barriers, vapour membranes and foils are often modelled with zero or near-zero thickness. In a volume export they vanish. Report them by area, and match the area to the declared unit of the EPD you use. If a layer is not modelled at all, add it as a documented line in the account rather than leaving it out.</p>
+<h3 id="4-treat-reinforcement-as-an-engineering-input">4. Treat reinforcement as an engineering input</h3>
+<p>Reinforcement is rarely modelled in early stages, and generic kilograms-per-cubic-metre factors can be badly wrong <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>. Ask the structural engineer for project-specific ratios by element type, record who gave them and when, and replace them with modelled or scheduled quantities as the design matures. The same applies to connectors and fixings in timber and steel systems.</p>
+<h3 id="5-control-units-and-precision">5. Control units and precision</h3>
+<p>Check that model units, export units and EPD declared units agree: m³, m², kg or pieces. Converting volume to mass needs a density, and the density must come from the same product as the EPD. Avoid exporting rounded schedule values; sum quantities in the model or export with enough decimals <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>. A quick total comparison between the model and the spreadsheet should be part of every handover.</p>
+<h3 id="6-do-not-trust-simplified-objects">6. Do not trust simplified objects</h3>
+<p>Windows, doors, curtain walls, railings and prefabricated bathroom pods are usually simplified families. Their geometry says little about their material content. Count them as pieces or areas and use the manufacturer's EPD or a documented generic value per unit, rather than calculating their volume <sup><a href="#src-3" aria-label="Source 3">[3]</a></sup>.</p>
+<h3 id="7-make-every-data-choice-traceable">7. Make every data choice traceable</h3>
+<p>For each line in the account, keep the product or generic dataset used, the EPD registration number and version, its validity date, the modules it covers and whether the 25 % surcharge was applied <sup><a href="#src-1" aria-label="Source 1">[1]</a></sup>. When a product is substituted on site, the as-built account must follow. That record is what turns a carbon figure into something a client, a controller or an authority can check.</p>
+<h2 id="writing-the-checks-into-the-project">Writing the checks into the project</h2>
+<p>Most of these checks can be written as information requirements and tested automatically. buildingSMART's Information Delivery Specification (IDS) became a final standard in June 2024 and lets a project state, in machine-readable form, which IFC entities must carry which properties, such as an NS 3451 code or a material name per layer <sup><a href="#src-5" aria-label="Source 5">[5]</a></sup>. ISO 7817-1:2024 gives a shared vocabulary for the level of information need at each stage <sup><a href="#src-6" aria-label="Source 6">[6]</a></sup>. We described an IDS-based quality gate in more detail in <a rel="noopener" href="https://jarlhalla.com/bim-data-quality-ids-preflight-ai-analysis/">The BIM Model That Says Not Ready</a> on jarlhalla.com, and how to turn carbon results into design decisions in <a rel="noopener" href="https://jarlhalla.com/whole-life-carbon-buildings-epd-decision-register/">Whole-Life Carbon in Buildings</a>.</p>
+<p>A practical order is to agree the scope map and data rules in the BIM execution plan, run the checks at each design milestone, and keep a short log of deviations and assumptions next to the account. The log is often more useful to the next reader than the final number.</p>
+<h2 id="how-sustainarc-can-help">How SustainArc can help</h2>
+<p>Through Taksdal Bygg Teknisk we prepare Revit and IFC models so that quantities, materials and classification are ready for a climate account, and we review existing exports against the checks above. We do not issue the account on behalf of the responsible applicant, and we will say clearly where a figure rests on an assumption.</p>
+<p><em>This article describes current rules and a published proposal as we understand them in November 2026. It is not legal advice. The responsible applicant must confirm the requirements that apply to a specific project.</em></p>
+<h2 id="sources">Sources</h2>
+<ol class="sources">
+<li id="src-1">Direktoratet for byggkvalitet. <a rel="noopener" href="https://www.dibk.no/regelverk/byggteknisk-forskrift-tek17/17/17-1">TEK17 § 17-1 Klimagassregnskap fra materialer, with guidance</a>. Accessed 15 November 2026.</li>
+<li id="src-2">Direktoratet for byggkvalitet. <a rel="noopener" href="https://www.dibk.no/regelverk/horinger/hoyringar/horingsnotat-om-klimakrav-i-byggteknisk-forskrift">Forslag til endringer i klimakrav i byggteknisk forskrift</a>. Hearing opened 5 February 2026, deadline 5 May 2026. Proposal, not adopted regulation.</li>
+<li id="src-3">Potrč Obrecht, T. et al. <a rel="noopener" href="https://www.mdpi.com/2071-1050/17/20/9354">The Impact of the Bill of Quantity Export Process from BIM on the Accuracy of the LCA Results</a>. <em>Sustainability</em> 17(20), 9354. Published 21 October 2025.</li>
+<li id="src-4">Potrč Obrecht, T., Röck, M., Hoxha, E., Passer, A. <a rel="noopener" href="https://doi.org/10.3390/su12145534">BIM and LCA Integration: A Systematic Literature Review</a>. <em>Sustainability</em> 12(14), 5534. 2020.</li>
+<li id="src-5">buildingSMART International. <a rel="noopener" href="https://comms.buildingsmart.org/the-buildingsmart-newsletter-is-here-for-june-2024">Information Delivery Specification (IDS) v1.0 approved as a final standard</a>. June 2024.</li>
+<li id="src-6">ISO. <a rel="noopener" href="https://www.iso.org/standard/82914.html">ISO 7817-1:2024 Building information modelling — Level of information need — Part 1</a>. Published June 2024.</li>
+<li id="src-7">Direktoratet for byggkvalitet. <a rel="noopener" href="https://www.dibk.no/byggtekniske-omrader/veileder-om-klimagassregnskap">Veileder om klimagassregnskap</a>. Last changed 18 August 2023.</li>
+</ol>
+        <div class="cta">
+          <div><h2 data-i18n="cta_h">Want to apply this to a project?</h2>
+          <p data-i18n="cta_p">Send a short description of the project and we will reply with how we can help.</p></div>
+          <a class="btn" href="mailto:taksdalbt@gmail.com?subject=SustainArc - Seven Checks Before Your BIM Model Becomes a TEK17 Climate A"><span class="arrow" data-i18n="cta_b">Email us</span></a>
+        </div>
+        <p class="ai-note" data-i18n="ai">Prepared with AI assistance and reviewed by a building engineer before publication. The illustrations were made for this article and do not show real projects.</p>
+      </article>
+      <aside class="side" aria-label="Article navigation">
+        <p class="note" data-only="no" hidden data-i18n="lang_note">Artikkelen er på engelsk. Norsk sammendrag står øverst.</p>
+        <div class="box"><span class="eyebrow" data-i18n="toc">In this article</span><ol><li><a href="#what-the-regulation-asks-for-today">What the regulation asks for today</a></li><li><a href="#why-the-quantity-export-matters-more-from-now-on">Why the quantity export matters more from now on</a></li><li><a href="#what-goes-wrong-between-model-and-spreadsheet">What goes wrong between model and spreadsheet</a></li><li><a href="#the-seven-checks">The seven checks</a></li><li><a href="#writing-the-checks-into-the-project">Writing the checks into the project</a></li><li><a href="#how-sustainarc-can-help">How SustainArc can help</a></li></ol></div>
+        <div class="box"><span class="eyebrow" data-i18n="src">Sources</span><a href="#sources" data-i18n="srcn">7 sources</a></div>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <div><div class="fb">SUSTAINARC</div><span data-i18n="f_tag">Sustainable architecture and circular construction. Part of the Jarlhalla ecosystem.</span></div>
+    <nav aria-label="Footer">
+      <a href="/articles/" data-i18n="arts">Articles</a>
+      <a href="https://jarlhalla.com">jarlhalla.com</a>
+      <a href="https://mykoknoks.jarlhalla.com">MykoKnoks</a>
+      <span>© 2026 Jarlhalla</span>
+    </nav>
+  </div>
+</footer>
+<script>
+(function(){
+  var NO = {"by": "et Jarlhalla-initiativ", "n1": "Fokus", "n2": "I praksis", "n4": "Artikler", "n3": "Kontakt", "home": "Forside", "arts": "Artikler", "toc": "I denne artikkelen", "src": "Kilder", "cta_h": "Vil du bruke dette i et prosjekt?", "cta_p": "Send en kort beskrivelse av prosjektet, så svarer vi på hvordan vi kan hjelpe.", "cta_b": "Send e-post", "lang_note": "Artikkelen er på engelsk. Norsk sammendrag står øverst.", "f_tag": "Bærekraftig arkitektur og sirkulært byggeri. En del av Jarlhalla-økosystemet.", "ai": "Utarbeidet med KI-støtte og kontrollert av byggingeniør før publisering. Illustrasjonene er laget for artikkelen og viser ikke reelle prosjekter.", "list_eb": "Artikler", "list_h": "Fagartikler fra SustainArc", "list_p": "Praktiske artikler om klimagassregnskap, ombruk og rehabilitering, med kilder. Artiklene er på engelsk med norsk sammendrag.", "also": "Mer om bærekraftig bygging på jarlhalla.com", "read": "Les artikkelen", "srcn": "7 kilder"};
+  var EN = {};
+  document.querySelectorAll("[data-i18n]").forEach(function(el){ EN[el.getAttribute("data-i18n")] = el.textContent; });
+  function setLang(lang){
+    var d = lang === "no" ? NO : EN;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){ var k = el.getAttribute("data-i18n"); if (d[k]) el.textContent = d[k]; });
+    document.querySelectorAll("[data-only]").forEach(function(el){ el.hidden = el.getAttribute("data-only") !== lang; });
+    document.getElementById("lang-en").setAttribute("aria-pressed", lang !== "no");
+    document.getElementById("lang-no").setAttribute("aria-pressed", lang === "no");
+    try { localStorage.setItem("sa-lang", lang); } catch(e){}
+  }
+  document.getElementById("lang-en").addEventListener("click", function(){ setLang("en"); });
+  document.getElementById("lang-no").addEventListener("click", function(){ setLang("no"); });
+  var saved = null; try { saved = localStorage.getItem("sa-lang"); } catch(e){}
+  setLang(saved || "en");
+})();
+</script>
+</body>
+</html>
