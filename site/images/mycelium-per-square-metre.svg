@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="Two insulation slabs that give the same thermal resistance on a balance: a thin, light EPS board rises, a thicker, heavier mycelium composite sinks">
+<title>Same thermal resistance, very different mass: EPS and a laboratory mycelium composite</title>
+<rect width="1200" height="675" fill="#FAF8F3"/>
+<rect y="560" width="1200" height="115" fill="#E8ECDF"/>
+<line x1="0" y1="560" x2="1200" y2="560" stroke="#D5DACC" stroke-width="2"/>
+
+<!-- heading label -->
+<rect x="440" y="52" width="320" height="44" rx="4" fill="#FFFFFF" stroke="#14332E" stroke-width="1.5"/>
+<text x="600" y="81" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="20" fill="#14332E">SAME R = 1 m²K/W</text>
+
+<!-- fulcrum -->
+<path d="M600 300 L548 560 L652 560 Z" fill="#B5CBA0" stroke="#14332E" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="600" cy="300" r="9" fill="#14332E"/>
+
+<!-- beam, tilted: left up, right down (rotate -> about fulcrum) -->
+<g transform="rotate(8 600 300)">
+  <rect x="190" y="292" width="820" height="16" rx="3" fill="#14332E"/>
+  <!-- hangers -->
+  <line x1="250" y1="300" x2="250" y2="300" stroke="#14332E"/>
+</g>
+
+<!-- left pan (higher). beam end at approx (194+, 300 - 57) after rotation -->
+<!-- left end point: x=600-410*cos8=194, y=300-410*sin8=243 ; right end: x=1006, y=357 -->
+<g>
+  <line x1="218" y1="246" x2="164" y2="330" stroke="#14332E" stroke-width="1.5"/>
+  <line x1="218" y1="246" x2="324" y2="330" stroke="#14332E" stroke-width="1.5"/>
+  <circle cx="218" cy="246" r="5" fill="#14332E"/>
+  <path d="M150 330 L338 330 L322 346 L166 346 Z" fill="#E8ECDF" stroke="#14332E" stroke-width="2" stroke-linejoin="round"/>
+  <!-- EPS slab: 40 mm -> 30 px tall -->
+  <rect x="174" y="300" width="140" height="30" fill="#FFFFFF" stroke="#14332E" stroke-width="2"/>
+  <g fill="none" stroke="#D5DACC" stroke-width="1.5">
+    <circle cx="188" cy="315" r="6"/><circle cx="204" cy="310" r="5"/><circle cx="220" cy="318" r="6"/><circle cx="238" cy="311" r="5"/>
+    <circle cx="254" cy="319" r="6"/><circle cx="270" cy="311" r="5"/><circle cx="286" cy="317" r="6"/><circle cx="302" cy="311" r="4"/>
+  </g>
+</g>
+
+<!-- right pan (lower) -->
+<g>
+  <line x1="982" y1="354" x2="876" y2="444" stroke="#14332E" stroke-width="1.5"/>
+  <line x1="982" y1="354" x2="1096" y2="444" stroke="#14332E" stroke-width="1.5"/>
+  <circle cx="982" cy="354" r="5" fill="#14332E"/>
+  <path d="M862 444 L1110 444 L1094 460 L878 460 Z" fill="#E8ECDF" stroke="#14332E" stroke-width="2" stroke-linejoin="round"/>
+  <!-- mycelium slab: 99 mm -> 74 px tall -->
+  <rect x="886" y="370" width="200" height="74" fill="#F2E3D8" stroke="#14332E" stroke-width="2"/>
+  <g fill="none" stroke="#A6481F" stroke-width="1.4" stroke-linecap="round" opacity=".75">
+    <path d="M896 386 q14 -8 26 2 t28 0 t30 4 t32 -4 t30 2 t30 -2"/>
+    <path d="M896 404 q12 8 26 -2 t30 4 t28 -4 t32 2 t30 -2 t28 4"/>
+    <path d="M896 424 q14 -6 28 2 t28 -2 t32 4 t28 -4 t32 2 t26 0"/>
+    <path d="M930 380 l6 14 m40 -10 l-4 18 m46 -14 l8 16 m40 -20 l-6 16"/>
+    <path d="M920 412 l8 14 m48 -16 l-6 16 m44 -12 l6 14 m38 -18 l-4 16"/>
+  </g>
+  <g fill="#A6481F"><circle cx="912" cy="396" r="2.5"/><circle cx="968" cy="416" r="2.5"/><circle cx="1030" cy="392" r="2.5"/><circle cx="1060" cy="430" r="2.5"/><circle cx="1000" cy="436" r="2.5"/></g>
+</g>
+
+<!-- labels -->
+<g font-family="IBM Plex Mono, monospace" fill="#14332E">
+  <text x="244" y="390" text-anchor="middle" font-size="19" font-weight="500">EPS 16 kg/m³</text>
+  <text x="244" y="418" text-anchor="middle" font-size="17">40 mm · 0.64 kg/m²</text>
+  <text x="986" y="504" text-anchor="middle" font-size="19" font-weight="500">MYCELIUM (LAB)</text>
+  <text x="986" y="532" text-anchor="middle" font-size="17">99 mm · 24 kg/m²</text>
+</g>
+
+<!-- bottom strip: unit comparison -->
+<g font-family="IBM Plex Mono, monospace" font-size="18">
+  <rect x="180" y="590" width="360" height="40" rx="4" fill="#FFFFFF" stroke="#D5DACC" stroke-width="1.5"/>
+  <text x="360" y="616" text-anchor="middle" fill="#3F7A55">per kg: lower CO₂</text>
+  <rect x="660" y="590" width="360" height="40" rx="4" fill="#FFFFFF" stroke="#D5DACC" stroke-width="1.5"/>
+  <text x="840" y="616" text-anchor="middle" fill="#A6481F">per m²: the real test</text>
+  <path d="M552 610 L646 610" stroke="#14332E" stroke-width="2"/>
+  <path d="M636 603 L648 610 L636 617" fill="none" stroke="#14332E" stroke-width="2"/>
+</g>
+</svg>
