@@ -4,8 +4,8 @@
  "seo_title": "Construction Moisture in Timber: Measure Before You Close",
  "description": "TEK17 § 13-14 says timber must be dry when it is built in. What the rule says, what Norwegian CLT projects show, and a measure-before-close protocol.",
  "dek": "The moisture rule in TEK17 is one sentence long. Whether a timber building meets it is decided on site, at the moment someone closes a layer, and it can only be shown with measurements.",
- "date": "2026-11-25",
- "updated": "2026-11-25",
+ "date": "2026-11-27",
+ "updated": "2026-11-27",
  "minutes": 9,
  "tags": [
   "Building physics",
